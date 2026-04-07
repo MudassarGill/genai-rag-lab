@@ -1,14 +1,13 @@
-from langchain_community.document_loaders import TextLoader
-from dotenv import load_dotenv
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate,PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough,RunnableLambda,RunnableBranch
-
+from dotenv import load_dotenv
 
 load_dotenv()
 
-loader = TextLoader("sample_data.txt")
+loader = PyPDFLoader("M Mudassar Hussain.pdf")
 documents = loader.load()
 
 
@@ -30,5 +29,4 @@ parser=StrOutputParser()
 
 chain=prompt | model | parser
 
-print(chain.invoke({"context":documents[0].page_content,"question":"What is RAG?"}))
-
+print(chain.invoke({"context":documents[0].page_content,"question":"Tell me Mudassar Hussain education and univeristy name"}))
