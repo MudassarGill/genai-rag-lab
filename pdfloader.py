@@ -31,4 +31,4 @@ parser=StrOutputParser()
 
 chain=prompt | model | parser
 
-print(chain.invoke({"context":documents[0].page_content,"question":"can you give me the mail and phone number of Mudassar Hussain"}))
+print(chain.invoke({"context":documents[0].page_content,"question":"can you give me the mail and phone number of Mudassar Hussain and also his github profile and also include his linkedin profile.. and also i need his profile headline"}))
