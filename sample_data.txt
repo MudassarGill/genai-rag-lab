@@ -1,4 +1,12 @@
-Retrieval-Augmented Generation (RAG) is a technique that combines an information retrieval system with a language model.
-It helps the language model to provide more accurate and context-aware answers by retrieving relevant documents from an external knowledge base before generating a response.
-This approach Reduces hallucinations in large language models.
-The most common implementation uses vector databases and embeddings
+Retrieval-Augmented Generation (RAG) is an AI framework for retrieving facts from an external knowledge base to ground large language models (LLMs) on the most accurate, up-to-date information and to give users insight into LLMs' generative process.
+
+Large language models are trained on vast amounts of data, which allows them to answer questions on a wide variety of topics. However, their knowledge is fixed to the time they were trained, and they cannot access private or confidential data without retraining. This is where RAG comes in.
+
+When a user asks a question, a RAG system first uses a retriever to find relevant documents from a proprietary or external dataset. These texts could be company manuals, recent news articles, or technical documentation. The retriever searches through a vector database where information is mapped based on semantic meaning.
+
+After the relevant documents are found, they are combined with the user's original question to form a new, enriched prompt. This augmented prompt is then fed into the language model. Because the LLM now has the exact context it needs, it can generate a highly accurate and customized answer. This greatly reduces the chances of the model "hallucinating" or making up facts.
+
+What is the difference between RAG and Fine-Tuning?
+Fine-tuning involves retraining the model on a new dataset so it internalizes the new knowledge. RAG does not retrain the model. Instead, it provides the model with a temporary cheat sheet of relevant information just for that specific question. RAG is generally much cheaper, faster to update with new information, and allows for source citation, whereas fine-tuning is better for teaching the model a specific style or tone of voice.
+
+Overall, RAG has become the industry standard for enterprise AI applications because it allows businesses to leverage powerful AI models while deeply connecting them to secure, proprietary data without massive compute costs.
