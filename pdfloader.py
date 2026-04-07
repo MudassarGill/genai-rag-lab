@@ -1,4 +1,6 @@
 from langchain_community.document_loaders import PyPDFLoader
+import warnings
+warnings.filterwarnings("ignore")
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate,PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -29,4 +31,4 @@ parser=StrOutputParser()
 
 chain=prompt | model | parser
 
-print(chain.invoke({"context":documents[0].page_content,"question":"Tell me Mudassar Hussain education and univeristy name"}))
+print(chain.invoke({"context":documents[0].page_content,"question":"can you give me the mail and phone number of Mudassar Hussain"}))
