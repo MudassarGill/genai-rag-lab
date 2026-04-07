@@ -4,30 +4,21 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate,PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough,RunnableLambda,RunnableBranch
-from langchain.text_splitter import CharacterTextSplitter
+from langchain_text_splitters import CharacterTextSplitter
 
 load_dotenv()
 
-loader = PyPDFLoader("M Mudassar Hussain.pdf")
-documents = loader.load()
+#demo txt
+text="""
+    I am a software engineer with 5 years of experience in the software industry. I have worked on various projects and technologies, including web development, mobile development, and cloud computing. I am a quick learner and can pick up new technologies quickly. I am also a team player and enjoy working in a collaborative environment. I am looking for a challenging role where I can utilize my skills and experience to contribute to the success of the organization.
+"""
 
-
-model=ChatGroq(
-    model_name="llama-3.3-70b-versatile",
-    temperature=0
+splitter=CharacterTextSplitter(
+    chunk_size=100,
+    chunk_overlap=20,
+    separator=''
 )
 
-prompt=PromptTemplate(
-    input_variables=["context","question"],
-    template="""
-    Use the following context to answer the question.
-    Context: {context}
-    Question: {question}
-    """
-)
+chunks=splitter.split_text(text)
 
-parser=StrOutputParser()
-
-chain=prompt | model | parser
-
-print(chain.invoke({"context":documents[0].page_content,"question":"can you give me the mail and phone number of Mudassar Hussain and also his github profile and also include his linkedin profile.. and also i need his profile headline"}))
+print(chunks)
