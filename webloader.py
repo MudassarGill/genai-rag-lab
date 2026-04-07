@@ -7,7 +7,7 @@ from langchain_core.runnables import RunnablePassthrough,RunnableLambda,Runnable
 
 load_dotenv()
 
-loader = WebBaseLoader("https://en.wikipedia.org/wiki/Retrieval-augmented_generation")
+loader = WebBaseLoader("https://en.wikipedia.org/wiki/Artificial_intelligence")
 documents = loader.load()
 
 
@@ -29,4 +29,4 @@ parser=StrOutputParser()
 
 chain=prompt | model | parser
 
-print(chain.invoke({"context":documents[0].page_content,"question":"What is RAG?"}))
+print(chain.invoke({"context":documents[0].page_content,"question":"What is Artificial Intelligence?"}))
