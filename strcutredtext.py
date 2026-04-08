@@ -6,7 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough,RunnableLambda,RunnableBranch
 from langchain_text_splitters import CharacterTextSplitter,RecursiveCharacterTextSplitter
 
-load_dotenv()
+load_dotenv()   
 
 text="""
     I am a software engineer with 5 years of experience in the software industry. I have worked on various projects and technologies, including web development, mobile development, and cloud computing. I am a quick learner and can pick up new technologies quickly. I am also a team player and enjoy working in a collaborative environment. I am looking for a challenging role where I can utilize my skills and experience to contribute to the success of the organization.
