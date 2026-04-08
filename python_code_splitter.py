@@ -36,7 +36,7 @@ text="""
 splitter=RecursiveCharacterTextSplitter.from_language(
     language=Language.PYTHON,
     chunk_size=300,
-    chunk_overlap=20,
+    chunk_overlap=50,
 )
 
 chunks=splitter.split_text(text)
