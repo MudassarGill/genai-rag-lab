@@ -35,10 +35,12 @@ text="""
 
 splitter=RecursiveCharacterTextSplitter.from_language(
     language=Language.PYTHON,
-    chunk_size=300,
+    chunk_size=200,
     chunk_overlap=50,
 )
 
 chunks=splitter.split_text(text)
 
 print(chunks[0])
+
+print(len(chunks))
