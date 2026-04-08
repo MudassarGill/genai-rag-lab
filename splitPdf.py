@@ -11,6 +11,14 @@ load_dotenv()
 loader = PyPDFLoader("M Mudassar Hussain.pdf")
 documents = loader.load()
 
+spiltter=CharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=50,
+    separator="",
+)
+
+chunks=spiltter.split_documents(documents)
+
 
 model=ChatGroq(
     model_name="llama-3.3-70b-versatile",
