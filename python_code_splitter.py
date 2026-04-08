@@ -33,12 +33,12 @@ text="""
     
 """
 
-splitter=RecursiveCharacterTextSplitter(
-    separators=["\n\n", "\n", ".", " "],
-    chunk_size=100,
+splitter=RecursiveCharacterTextSplitter.from_language(
+    language=Language.PYTHON,
+    chunk_size=300,
     chunk_overlap=20,
 )
 
 chunks=splitter.split_text(text)
 
-print(chunks)
+print(chunks[0])
