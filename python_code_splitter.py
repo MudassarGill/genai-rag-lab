@@ -41,6 +41,6 @@ splitter=RecursiveCharacterTextSplitter.from_language(
 
 chunks=splitter.split_text(text)
 
-print(chunks[0])
+print(chunks[1])
 
 print(len(chunks))
