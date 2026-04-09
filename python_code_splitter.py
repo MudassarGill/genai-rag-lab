@@ -44,3 +44,4 @@ chunks=splitter.split_text(text)
 print(chunks[1])
 
 print(len(chunks))
+print(chunks[0])
