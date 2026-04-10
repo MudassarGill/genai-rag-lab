@@ -28,8 +28,22 @@ doc3=Document(
         "author": "M Mudassar Hussain"
     }
 )
+doc4=Document(
+    page_content="Mohammad Amir is a very good bowler.He is very fast bowler He is very populer in the world.",
+    metadata={
+        "source": "doc4",
+        "author": "M Mudassar Hussain"
+    }
+)
+doc5=Document(
+    page_content="shaheen shah afridi is a very good bowler.He is very fast bowler He is very populer in the world.",
+    metadata={
+        "source": "doc5",
+        "author": "M Mudassar Hussain"
+    }
+)
 
-docs=[doc1,doc2,doc3]
+docs=[doc1,doc2,doc3,doc4,doc5]
 
 embeddings=HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2",
@@ -47,3 +61,9 @@ vectorstore.add_documents(docs)
 #view doc embding,metadata
 print(vectorstore.get(include=["documents","metadatas","embeddings"]))
 print("Vector store created successfully")
+
+
+vectorstore.similarity_search(
+    "who among these are a bowler?",
+    k=2
+)
