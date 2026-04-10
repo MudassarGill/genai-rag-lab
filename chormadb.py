@@ -43,5 +43,5 @@ vectorstore=Chroma.from_documents(
     persist_directory="./.My_chroma_db",
     collection_name="cricket"
 )
-
+vectorstore.add_documents(docs)
 print("Vector store created successfully")
