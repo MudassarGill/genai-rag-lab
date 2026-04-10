@@ -44,4 +44,6 @@ vectorstore=Chroma.from_documents(
     collection_name="cricket"
 )
 vectorstore.add_documents(docs)
+#view doc embding,metadata
+print(vectorstore.get(include=["documents","metadatas","embeddings"]))
 print("Vector store created successfully")
