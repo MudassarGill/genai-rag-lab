@@ -40,5 +40,8 @@ embeddings=HuggingFaceEmbeddings(
 vectorstore=Chroma.from_documents(
     documents=docs,
     embedding=embeddings,
-    persist_directory="./.chroma_db"
+    persist_directory="./.My_chroma_db",
+    collection_name="cricket"
 )
+
+print("Vector store created successfully")
