@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from langchain_core.documents import Document
 load_dotenv()
 
+
 doc1=Document(
     page_content="Babar azam is a very good batsman.He is very good at cover drive. and Fakhar Zaman is a very good batsman.",
     metadata={
@@ -67,9 +68,6 @@ vectorstore.similarity_search(
     "who among these are a bowler?",
     k=2
 )
-
-
-
 
 vectorstore.similarity_search_with_score(
     "who among these are a batsman?",
