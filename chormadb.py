@@ -67,3 +67,11 @@ vectorstore.similarity_search(
     "who among these are a bowler?",
     k=2
 )
+
+
+
+
+vectorstore.similarity_search_with_score(
+    "who among these are a batsman?",
+    k=2
+)
