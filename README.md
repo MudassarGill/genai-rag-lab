@@ -20,9 +20,16 @@ This repository includes custom loaders to extract and process different data fo
    - Extracts text from PDF documents (e.g., personal resumes, reports).
    - Utilizes `PyPDFLoader` to parse the PDF and uses the LLM to extract specific, targeted details like contact information, profile headlines, and links.
 
+4. **`chormadb.py`** 🗄️
+   - Implements a **Vector Store** using **ChromaDB**.
+   - Embeds document text using HuggingFace's `all-MiniLM-L6-v2` sentence transformers.
+   - Saves the vector store locally and demonstrates similarity search ranking based on context.
+
 ## 🛠️ Tech Stack
 * **Framework:** LangChain
 * **LLM Provider:** Groq API (`llama-3.3-70b-versatile`)
+* **Vector Store:** ChromaDB
+* **Embeddings:** HuggingFace (`sentence-transformers/all-MiniLM-L6-v2`)
 * **Environment:** `python-dotenv` for managing API keys securely
 * **Language:** Python
 
@@ -31,7 +38,7 @@ This repository includes custom loaders to extract and process different data fo
 1. Clone or download this project.
 2. Install the necessary Python packages:
    ```bash
-   pip install langchain-groq langchain-community python-dotenv pypdf beautifulsoup4
+   pip install langchain-groq langchain-community python-dotenv pypdf beautifulsoup4 chromadb langchain-huggingface sentence-transformers
    ```
 3. Create a `.env` file in the root directory and add your Groq API key:
    ```env
@@ -42,6 +49,7 @@ This repository includes custom loaders to extract and process different data fo
    python textloader.py
    python pdfloader.py
    python webloader.py
+   python chormadb.py
    ```
 
 ---
