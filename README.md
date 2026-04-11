@@ -57,7 +57,7 @@ This repository includes custom loaders to extract and process different data fo
 ## 👨‍💻 About the Developer
 
 ### **M Mudassar Hussain** 
-*AI | ML | GenAI | RAG | Backend Developer (FastAPI)*
+*AI | ML | GenAI | RAG | Backend Developer*
 
 This lab environment was developed by **M Mudassar Hussain** as part of an exploration into Advanced Generative AI and RAG architectures. Mudassar is highly passionate about building intelligent, scalable AI systems, integrating modern UI/UX workflows, and deploying robust backend services.
 
