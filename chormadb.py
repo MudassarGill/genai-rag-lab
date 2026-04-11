@@ -78,3 +78,4 @@ vectorstore.similarity_search_with_score(
     "who is the best batsman?",
     k=2
 )
+vectorstore.get(include=["documents","metadatas","embeddings"])
