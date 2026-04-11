@@ -73,3 +73,8 @@ vectorstore.similarity_search_with_score(
     "who among these are a batsman?",
     k=2
 )
+
+vectorstore.similarity_search_with_score(
+    "who is the best batsman?",
+    k=2
+)
