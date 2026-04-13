@@ -1,7 +1,12 @@
 from langchain.tools import tool
 from langchain.tools import DuckDuckGoSearchRun
 
+
+
+search=DuckDuckGoSearchRun()
+print(search.invoke('Latest AI news'))
 # @tool
+
 # def add(a:int,b:int)->int:
 #     """Add two numbers"""
 #     return a+b
