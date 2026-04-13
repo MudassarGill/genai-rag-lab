@@ -26,4 +26,5 @@ class toolkit:
         return [Mutliple,divide,add,sub]
 
 toolkit=toolkit()
-print(toolkit.combine_tools())
+tools=toolkit.combine_tools()
+print(tools.name,"=>",tools.description)
