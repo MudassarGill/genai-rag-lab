@@ -1,12 +1,11 @@
-from git import Tree
-from torch.optim.optimizer import required
+
 from langchain.tools import BaseTool
 from typing import type
-from pydantic import Field
+from pydantic import Field,BaseModel
 
 
 
-class Multipleinput(BaseTool):
+class Multipleinput(BaseModel):
     a: int = Field(required=True,description="First number")
     b: int = Field(required=True,description="Second number")
 
@@ -20,4 +19,11 @@ class Multiplytools(BaseTool):
     def _arun(self,a:int,b:int)->int:
         return a*b
 
+
+mul=Multiplytools()
+result=mul.invoke({"a":2,"b":3})
+print(result)
+print(mul.name)
+print(mul.description)
+print(mul.args_schema)
     
