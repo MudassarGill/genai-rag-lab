@@ -1,7 +1,7 @@
 from langchain_community.retrievers import WikipediaRetriever
 from langchain_openai import OpenAIEmbeddings
 
-retrivers=WikipediaRetriever(top_k_results=2)
+retrivers=WikipediaRetriever(top_k_results=2,lang='eng')
 query='What is AI and tell me its types?'
 docs=retrivers.invoke(query)
 
