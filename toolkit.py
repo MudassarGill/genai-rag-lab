@@ -27,4 +27,5 @@ class toolkit:
 
 toolkit=toolkit()
 tools=toolkit.combine_tools()
-print(tools.name,"=>",tools.description)
+for tool in tools:
+    print(tool.name,"=>",tool.description)
