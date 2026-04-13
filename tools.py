@@ -4,7 +4,7 @@ from langchain.tools import DuckDuckGoSearchRun
 
 
 search=DuckDuckGoSearchRun()
-print(search.invoke('Latest AI news'))
+print(search.invoke('Latest news in the world'))
 # @tool
 
 # def add(a:int,b:int)->int:
